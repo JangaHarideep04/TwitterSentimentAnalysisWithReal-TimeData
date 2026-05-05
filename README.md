@@ -1,231 +1,183 @@
-# TwitterSentimentAnalysisWithReal-TimeData
+# 🐦 Twitter Sentiment Analysis
 
-# 🐦 Twitter Sentiment Analysis with Real-Time Data
-
-A real-time sentiment analysis system that collects live tweets using the Twitter API and classifies them into **Positive, Negative, or Neutral sentiments** using Natural Language Processing (NLP) techniques. The system also provides interactive visualizations to understand public opinion trends.
+A Python-based project that analyzes public sentiment on Twitter by classifying tweets into **Positive, Negative, or Neutral** using Natural Language Processing (NLP) techniques.
 
 ---
 
-## 📌 Project Description
+## 📌 Project Overview
 
-With the rapid growth of social media, platforms like Twitter generate massive amounts of user opinions. Understanding these opinions is important for businesses, researchers, and individuals.
+This project was developed to understand public opinion on social media by analyzing tweets in real-time. It extracts tweets based on a keyword or hashtag and applies sentiment analysis to identify the overall mood of users.
 
-This project extracts real-time tweets based on keywords or hashtags and analyzes their sentiment using NLP techniques. It then visualizes the results using graphs and dashboards to make insights easy to understand.
-
----
-
-## 🎯 Objectives
-
-* Collect real-time tweets using Twitter API
-* Perform sentiment analysis (Positive / Negative / Neutral)
-* Visualize data using graphs and charts
-* Provide insights into public opinion and trends
+The project combines **data collection, preprocessing, sentiment analysis, and visualization** to provide meaningful insights.
 
 ---
 
-## 🚀 Key Features
+## 🎯 Project Objective
 
-* 🔍 Real-time tweet extraction using Twitter API
-* 🧠 Sentiment classification using NLP
-* 🧹 Data preprocessing (cleaning, tokenization, stopword removal)
-* 📊 Data visualization:
-
-  * Bar charts
-  * Pie charts
-  * Word cloud
-  * Sentiment graphs
-* 📈 Engagement analysis (likes & retweets)
-* 🌐 Web interface using Flask
+* Analyze real-time tweets
+* Classify sentiment (Positive / Negative / Neutral)
+* Visualize sentiment distribution
+* Understand public opinion trends
 
 ---
 
-## 🏗️ System Workflow
+## 🧠 Methodology (Based on Project Implementation)
 
-The system works in three main phases:
+The project follows these steps:
 
 ### 1️⃣ Data Collection
 
-* Tweets are collected using Twitter API via Tweepy
-* Input: keyword / hashtag / number of tweets
+* Tweets are collected using the **Twitter API (Tweepy)**
+* Input: keyword / hashtag and number of tweets
 
 ### 2️⃣ Data Preprocessing
 
+* Removal of unwanted characters (URLs, mentions)
 * Tokenization
 * Stopword removal
-* Stemming
-* Removing URLs, mentions, special characters
+* Text cleaning
 
 ### 3️⃣ Sentiment Analysis
 
-* TextBlob is used to calculate sentiment polarity
-* Classification:
+* **TextBlob** → polarity-based sentiment
+* **VADER (NLTK)** → sentiment intensity scores
 
-  * Positive → polarity > 0
-  * Neutral → polarity = 0
-  * Negative → polarity < 0
+### 4️⃣ Classification
+
+* Positive → positive score higher
+* Negative → negative score higher
+* Neutral → scores are equal
+
+### 5️⃣ Visualization
+
+* Pie chart → sentiment percentage
+* Bar chart → tweet count
 
 ---
 
-## 🧠 Methodology
+## 🚀 Current Implementation (Available Code)
 
-* Tweets are fetched in real-time using API
-* Cleaned and processed using NLP techniques
-* Sentiment is calculated using TextBlob
-* Results are stored and visualized using graphs
+The available implementation includes:
 
-The system also uses:
-
-* Bag of Words (BoW)
-* Naive Bayes concept (basic classification logic)
-* Data visualization for insights
+* Command-line based input
+* Real-time tweet fetching using Tweepy
+* Sentiment analysis using TextBlob and VADER
+* Data visualization using Matplotlib
+* Output displayed in console and graphs
 
 ---
 
 ## 🛠️ Technologies Used
 
-### Programming Language
-
 * Python
-
-### Libraries & Tools
-
-* NLTK
-* TextBlob
-* Pandas
-* NumPy
-* Scikit-learn
-* Matplotlib
-
-### Frameworks
-
-* Flask (Web Application)
-* Streamlit (optional UI)
-
-### APIs
-
-* Twitter Developer API
 * Tweepy
-
----
-
-## 📊 Output & Visualizations
-
-The project generates multiple insights:
-
-* 📉 Sentiment distribution (Positive / Negative / Neutral)
-* 📊 Bar charts and pie charts
-* ☁️ Word cloud for frequent words
-* 📈 Time-series analysis (likes & retweets)
-* 📊 Polarity vs Subjectivity graph
-
-Users can:
-
-* Enter keywords
-* View tweets
-* Analyze sentiment in real-time
+* TextBlob
+* NLTK (VADER)
+* Pandas
+* Matplotlib
+* Termcolor
 
 ---
 
 ## 📂 Project Structure
 
-```
-twitter-sentiment-analysis/
+```bash id="v8x7m1"
+sentiment-analysis/
 │
-├── app.py                 # Main Flask application
-├── twitter_client.py      # Twitter API handling
-├── tweet_analyzer.py      # Sentiment analysis logic
-├── templates/             # HTML frontend
-├── static/                # CSS / assets
-├── data/                  # Collected data
-├── requirements.txt       # Dependencies
-└── README.md              # Project documentation
+├── sentiment_analysis.py   # Main script (available)
+├── README.md              # Documentation
 ```
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ How to Run
 
-### Step 1: Clone the Repository
+### 1. Install dependencies
 
-```bash
-git clone https://github.com/your-username/twitter-sentiment-analysis.git
-cd twitter-sentiment-analysis
+```bash id="r4x8na"
+pip install tweepy textblob nltk matplotlib pandas termcolor
 ```
 
-### Step 2: Install Dependencies
+### 2. Download NLTK data
 
-```bash
-pip install -r requirements.txt
+```python id="f4bn1k"
+import nltk
+nltk.download('vader_lexicon')
 ```
 
-### Step 3: Configure Twitter API
+### 3. Add Twitter API keys
 
-Add your API keys in the code:
-
-```python
+```python id="8v8w2k"
 consumer_key = "YOUR_KEY"
 consumer_secret = "YOUR_SECRET"
 access_token = "YOUR_TOKEN"
 access_token_secret = "YOUR_SECRET"
 ```
 
-### Step 4: Run the Application
+### 4. Run the script
 
-```bash
-python app.py
-```
-
-### Step 5: Open in Browser
-
-```
-http://127.0.0.1:5000/
+```bash id="7m4rxa"
+python sentiment_analysis.py
 ```
 
 ---
 
-## 📈 Use Cases
+## 📊 Output
 
-* 📊 Brand sentiment analysis
-* 📣 Public opinion tracking
-* 🏢 Business insights
-* 📰 Trend detection
-* 🎯 Marketing analysis
+* Total tweets analyzed
+* Number of positive, negative, neutral tweets
+* Sentiment percentages
+* Pie chart and bar chart visualizations
+
+---
+
+## ⚠️ Note on Implementation
+
+Some parts of the original project (such as extended modules and additional interface components described in the project report) are not included in the current repository due to loss of certain files.
+
+However, the core functionality of:
+
+* Tweet collection
+* Sentiment analysis
+* Visualization
+
+is fully implemented and working.
 
 ---
 
 ## 🚧 Limitations
 
-* Cannot detect sarcasm accurately
-* Limited support for multiple languages
-* Depends on Twitter API access
+* Cannot detect sarcasm
+* Limited contextual understanding
+* Works mainly for English tweets
+* Depends on Twitter API availability
 
 ---
 
-## 🔮 Future Enhancements
+## 🔮 Future Improvements
 
-* Deep learning models (LSTM / BERT)
-* Multi-language sentiment analysis
-* Sarcasm detection
-* Real-time dashboards (Streamlit / React)
-* Improved accuracy using advanced ML models
+* Rebuild missing modules from original project
+* Add web interface (Flask / Streamlit)
+* Use advanced ML models (BERT / LSTM)
+* Improve sentiment accuracy
+* Add real-time dashboard
 
 ---
 
 ## 👨‍💻 Author
 
-**Naga Venkata Sai Harideep Janga**
-
-* Computer Science Graduate
-* Interested in Data Science, NLP & Cloud Systems
+Harideep Janga
+Computer Science Graduate
+Interested in Data Science & NLP
 
 ---
 
 ## 📜 License
 
-This project is for academic and research purposes.
+This project is for academic and learning purposes.
 
 ---
 
-## ⭐ If you found this useful
+## ⭐ Support
 
-Give it a ⭐ on GitHub and feel free to contribute!
+If you found this project useful, give it a ⭐
