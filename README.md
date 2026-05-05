@@ -164,11 +164,13 @@ Note: Some of these components are not included in the current repository due to
 
 ## 📂 Project Structure
 
+
 ```bash
 twitter-sentiment-analysis/
 │
 ├── sentiment_analysis.py   # Main script (core logic)
-├── README.md              # Project documentation
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
 ```
 
 ---
@@ -187,7 +189,7 @@ cd twitter-sentiment-analysis
 ### Step 2: Install dependencies
 
 ```bash
-pip install tweepy textblob nltk matplotlib pandas termcolor
+pip install -r requirements.txt
 ```
 
 ---
@@ -203,14 +205,7 @@ nltk.download('vader_lexicon')
 
 ### Step 4: Configure Twitter API Keys
 
-Replace with your own keys:
-
-```python
-consumer_key = "YOUR_KEY"
-consumer_secret = "YOUR_SECRET"
-access_token = "YOUR_TOKEN"
-access_token_secret = "YOUR_SECRET"
-```
+You will be prompted to enter your Twitter API keys securely at runtime. **Do not hardcode your keys in the script.**
 
 ⚠️ Important: Never upload your API keys to public repositories.
 

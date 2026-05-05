@@ -1,0 +1,6 @@
+tweepy
+textblob
+nltk
+matplotlib
+pandas
+termcolor
