@@ -6,13 +6,13 @@ A Python-based project that analyzes public sentiment on Twitter by classifying 
 
 ## 📌 Project Overview
 
-This project was developed to understand public opinion on social media by analyzing tweets in real-time. It extracts tweets based on a keyword or hashtag and applies sentiment analysis to identify the overall mood of users.
+This project aims to understand public opinion on social media by analyzing tweets in real time. It extracts tweets based on a user-defined keyword or hashtag and applies sentiment analysis to identify the overall mood of users.
 
-The project combines **data collection, preprocessing, sentiment analysis, and visualization** to provide meaningful insights.
+The system combines **data collection, preprocessing, sentiment analysis, and visualization** to generate meaningful insights from textual data.
 
 ---
 
-## 🎯 Project Objective
+## 🎯 Project Objectives
 
 * Analyze real-time tweets
 * Classify sentiment (Positive / Negative / Neutral)
@@ -21,7 +21,7 @@ The project combines **data collection, preprocessing, sentiment analysis, and v
 
 ---
 
-## 🧠 Methodology (Based on Project Implementation)
+## 🧠 Methodology
 
 The project follows these steps:
 
@@ -32,7 +32,7 @@ The project follows these steps:
 
 ### 2️⃣ Data Preprocessing
 
-* Removal of unwanted characters (URLs, mentions)
+* Removal of unwanted content (URLs, mentions, special characters)
 * Tokenization
 * Stopword removal
 * Text cleaning
@@ -40,51 +40,51 @@ The project follows these steps:
 ### 3️⃣ Sentiment Analysis
 
 * **TextBlob** → polarity-based sentiment
-* **VADER (NLTK)** → sentiment intensity scores
+* **VADER (NLTK)** → sentiment intensity scoring
 
 ### 4️⃣ Classification
 
-* Positive → positive score higher
-* Negative → negative score higher
+* Positive → positive score is higher
+* Negative → negative score is higher
 * Neutral → scores are equal
 
 ### 5️⃣ Visualization
 
 * Pie chart → sentiment percentage
-* Bar chart → tweet count
+* Bar chart → tweet count distribution
 
 ---
 
-## 🚀 Current Implementation (Available Code)
+## 🚀 Current Implementation
 
-The available implementation includes:
+The current implementation includes:
 
 * Command-line based input
 * Real-time tweet fetching using Tweepy
 * Sentiment analysis using TextBlob and VADER
 * Data visualization using Matplotlib
-* Output displayed in console and graphs
+* Results displayed in console and graphs
 
 ---
 
 ## 🛠️ Technologies Used
 
-* Python
-* Tweepy
-* TextBlob
-* NLTK (VADER)
-* Pandas
-* Matplotlib
-* Termcolor
+* **Python**
+* **Tweepy** (Twitter API)
+* **TextBlob**
+* **NLTK (VADER)**
+* **Pandas**
+* **Matplotlib**
+* **Termcolor**
 
 ---
 
 ## 📂 Project Structure
 
-```bash id="v8x7m1"
+```bash
 sentiment-analysis/
 │
-├── sentiment_analysis.py   # Main script (available)
+├── sentiment_analysis.py   # Main script
 ├── README.md              # Documentation
 ```
 
@@ -94,20 +94,20 @@ sentiment-analysis/
 
 ### 1. Install dependencies
 
-```bash id="r4x8na"
+```bash
 pip install tweepy textblob nltk matplotlib pandas termcolor
 ```
 
-### 2. Download NLTK data
+### 2. Download required NLTK data
 
-```python id="f4bn1k"
+```python
 import nltk
 nltk.download('vader_lexicon')
 ```
 
 ### 3. Add Twitter API keys
 
-```python id="8v8w2k"
+```python
 consumer_key = "YOUR_KEY"
 consumer_secret = "YOUR_SECRET"
 access_token = "YOUR_TOKEN"
@@ -116,7 +116,7 @@ access_token_secret = "YOUR_SECRET"
 
 ### 4. Run the script
 
-```bash id="7m4rxa"
+```bash
 python sentiment_analysis.py
 ```
 
@@ -124,41 +124,41 @@ python sentiment_analysis.py
 
 ## 📊 Output
 
-* Total tweets analyzed
-* Number of positive, negative, neutral tweets
+The program provides:
+
+* Total number of tweets analyzed
+* Count of positive, negative, and neutral tweets
 * Sentiment percentages
 * Pie chart and bar chart visualizations
 
 ---
 
-## ⚠️ Note on Implementation
+## ⚠️ Important Note
 
-Some parts of the original project (such as extended modules and additional interface components described in the project report) are not included in the current repository due to loss of certain files.
+Some components described in the original project report (such as extended modules or interface improvements) are not included in this repository due to missing files.
 
-However, the core functionality of:
+However, the core functionalities are fully implemented:
 
 * Tweet collection
 * Sentiment analysis
 * Visualization
 
-is fully implemented and working.
-
 ---
 
 ## 🚧 Limitations
 
-* Cannot detect sarcasm
+* Cannot detect sarcasm effectively
 * Limited contextual understanding
-* Works mainly for English tweets
+* Works primarily for English tweets
 * Depends on Twitter API availability
 
 ---
 
 ## 🔮 Future Improvements
 
-* Rebuild missing modules from original project
+* Rebuild missing modules from the original project
 * Add web interface (Flask / Streamlit)
-* Use advanced ML models (BERT / LSTM)
+* Integrate advanced models (BERT / LSTM)
 * Improve sentiment accuracy
 * Add real-time dashboard
 
@@ -166,7 +166,7 @@ is fully implemented and working.
 
 ## 👨‍💻 Author
 
-Harideep Janga
+**Harideep Janga**
 Computer Science Graduate
 Interested in Data Science & NLP
 
@@ -180,4 +180,4 @@ This project is for academic and learning purposes.
 
 ## ⭐ Support
 
-If you found this project useful, give it a ⭐
+If you found this project useful, consider giving it a ⭐ on GitHub!
